@@ -1,12 +1,16 @@
 <p><%= @directions %></p>
 <p>--------------------------------------------------------------------</p>
 
-<div>
-	<p><%= @right %></p>
-</div>
+<!-- Display story text -->
+<p><%= @right %></p>
 
+<!-- Display response to input -->
+<p><%= @invalid %></p>
+
+<!-- text box for user input -->
 <p><input type="text" id="input" autofocus></input></p>
 
+<!-- user input is passed to the controller with params -->
 <script type="text/javascript">
 	
 	$("#input").change(function(){

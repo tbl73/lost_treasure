@@ -1,13 +1,18 @@
 <p><%= @directions %></p>
 <p>--------------------------------------------------------------------</p>
 
+<!-- Display story text -->
 <p><%= @bridge %></p>
 
 <p><%= @temple %></p>
 
+<!-- Display response to input -->
 <p><%= @invalid %></p>	
-	<p><input type="text" id="input" autofocus></input></p>
 
+<!-- text box for user input -->
+<p><input type="text" id="input" autofocus></input></p>
+
+<!-- user input is passed to the controller with params -->
 <script type="text/javascript">
 
 	$("#input").change(function(){
@@ -16,4 +21,4 @@
 		window.location = url;
 		})
 
-</script> 
+</script>

@@ -1,17 +1,18 @@
 <p><%= @directions %></p>
 <p>--------------------------------------------------------------------</p>
 
+<!-- Display story text -->
 <p><%= @door %></p>
 
 <p>Type the color names in the correct order, with a space between each name.  Press enter when complete.</p>
 
+<!-- Display response to input -->
 <p><%= @incorrect %></p>
 
-<div>
-	<p><input type="text" id="input" autofocus></input></p>
-	
-</div>
+<!-- text box for user input -->
+<p><input type="text" id="input" autofocus></input></p>
 
+<!-- user input is passed to the controller with params -->
 <script type="text/javascript">
 	
 	$("#input").change(function(){

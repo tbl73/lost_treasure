@@ -2,6 +2,7 @@
 <% case @choice %>
 <% when "supplies" %>
 
+<!-- if the user input was supplies, iterate through the supplies array and display the names -->
 	<div>
 		<p>These supplies are in my pack:</p>
 		<% @supplies.each do |item| %>
@@ -9,6 +10,7 @@
 		<% end %>
 	</div>
 
+<!-- if the user input was book, iterate through the book hash displaying key and value -->
 <% when "book" %>
 	<p>These are the pages in the book:</p>
 	<% @book.each do |key, value| %>
@@ -16,10 +18,10 @@
 		<pre><%= value %></pre>
 	<% end %>
 	
+<!-- if the user input was list, show text. -->	
 <% when "list" %>
 	<p>Type "give" to give away a supply.</p>
 <% end %>
-<div>
+
 <p>---------------------------------------------</p>
 <p>Press the back button to return to the story.</p>
-</div>

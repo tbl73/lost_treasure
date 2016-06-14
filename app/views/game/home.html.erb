@@ -1,30 +1,25 @@
-	<div id = "start">
 	<h2>The Lost Treasure of Z</h2>
 		<p></p>
-		<!-- display the beginning of the story in the first div -->
-		<p>You are in a junk store in South America, when you stumble upon the journal of Sir Reginald Higginbotham, the famous explorer, who disappeared many years ago, searching for the lost treasure of Z.  Sir Reginald was last seen in this very town, and what happened to him has long been a mystery. No one had found a trace of even his leather hat.  Leafing through the pages, you find that many of them are smeared and difficult to read.  You can make out a few words.</p>
+		<!-- display the beginning of the story -->
+		<p><%= @start %></p>
+		<!-- display the pages of the book -->
+		<table>
+			<tr>
+				<td><pre><%=@book["sketch"]%></pre></td>
+				<td><pre><%=@book["page1"]%></pre></td>
 
-	  <pre>
-			<%=@book["page1"]%>
-		</pre>
+			</tr>
 
-		<p>Most interesting of all is a sketch in the back of the book.</p>
+		</table>
+		<!-- display more story -->
+		<p><%= @start2 %></p>
 
-		<pre>
-			<%=@book["sketch"]%>
-		</pre>
-
-		<p>Could this be a map to the treasure?  Do you dare try and find it?  Will you avoid the fate of Sir Reginald???  To search for the treasure, type yes and press enter. If you choose not to go on the hunt, type no and press enter.</p>
-	<div>
-		<%= @invalid %>
-	</div>
+	<%= @invalid %>
 <!-- Get user response-->
 <p><input type="text" id="input" autofocus></input></p>
-</div>
 
-
+<!-- get user input to determine the next step in the story.  Pass the input as a parameter back to the same page and take action in controller depending on parameter. -->
 <script type="text/javascript">
-	
 
 	$("#input").change(function(){
 		var choice = $(this).val().toLowerCase();

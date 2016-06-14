@@ -1,13 +1,18 @@
-<p>Atilio still refuses to cross the river, so you say farewell. You inch your way onto the rope bridge, constantly testing each step.  You are moving very slowly along, when you notice that the ropes seem to swaying more and more.  You take a quick glance behind you, and notice that the rope appears to be about to break.  You speed up, in a desperate race to make the other side.  You leap off the bridge and make it to the edge just as the last rope breaks.  You are very relieved to be on solid ground.  After a short rest, you begin to hike towards a mound in the distance.  As you approach, you realize it's a stone temple covered with vines.  It looks like you've found the location from the map!</p>
+<p><%= @directions %></p>
+<p></p>
 
-<p>As you approach the temple, you see an opening in the vines.  Suddenly, you are startled to feel something hit you in the shoulder.  You look up and notice a troop of monkeys throwing grass and small stones at you.  You have to make your way past the monkeys to get into the temple - how can you distract them??</p>
+<p><%= @bridge %></p>
 
-<p>MONKEYS</p>
+<p><%= @temple %></p>
 
+<p><%= @invalid %></p>	
 	<p><input type="text" id="input" autofocus></input></p>
+
 <script type="text/javascript">
+
 	$("#input").change(function(){
-		var url = "<%= temple_path %>";
+		var choice = $(this).val().toLowerCase();
+		var url = "<%= bridge_path %>" + "?input=" + choice;
 		window.location = url;
 		})
 

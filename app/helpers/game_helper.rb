@@ -1,14 +1,16 @@
 module GameHelper
 
+	#a list of directions that will be displayed on each page.
+	def directions
+		@directions = "To look at your supplies at any time, type \"supplies\". To look at the book pages, type \"book\". To see a list of actions, type \"list\"."
+	end
 
-#this is a hash that contains the text of the story
+	#this is a hash that contains the text of the story
 	def story
 	  @story_hash = {
-			"start" => "You are in a junk store in South America, when you stumble upon the journal of Sir Reginald Higginbotham, the famous explorer, who disappeared many years ago, searching for the lost treasure of Z.  Sir Reginald was last seen in this very town, and what happened to him has long been a mystery. No one had found a trace of even his leather hat.  Leafing through the pages, you find that many of the pages are smeared and difficult to read.  You can make out a few words.",
+			"start" => "You are in a junk store in South America, when you stumble upon the journal of Sir Reginald Higginbotham, the famous explorer, who disappeared many years ago, searching for the lost treasure of Z.  Sir Reginald was last seen in this very town, and what happened to him has long been a mystery. No one had found a trace of even his leather hat.  Leafing through the pages, you find that many of the pages are smeared and difficult to read.  You can make out a few words. Most interesting of all is a sketch in the back of the book.",
 
-			"start2" => "Most interesting of all is a sketch in the back of the book.",
-
-			"start3" => "Could this be a map to the treasure?  Do you dare try and find it?  Will you avoid the fate of Sir Reginald???  To search for the treasure, type yes and press enter. If you choose not to go on the hunt, type no and press enter.",
+			"start2" => "Could this be a map to the treasure?  Do you dare try and find it?  Will you avoid the fate of Sir Reginald???  To search for the treasure, type yes and press enter. If you choose not to go on the hunt, type no and press enter.",
 
 			"start_no" => "You decide to ignore the clues in the journal.  While you live a long and eventful life, you always wonder what would have happened if you had found the treasure....",
 
@@ -38,7 +40,7 @@ module GameHelper
 
 			"temple_hall_right" => "You shine your light into the passageway.  You see that it has many fallen rocks, but you think you can make your way through.  You scramble over and around the rocks, eventually dead-ending in another hallway.  You can make out two doors. One has some kind of mask above it, and the other has a pattern that looks like a shield.  Type shield or mask to go toward that door.",
 
-			"hall2_shield" => "You come to a door and open it.  You peer into the dark haze and creep inside.  You notice that you feel slightly woozy.  Suddenly you catch sight of giant glowing red eyes and a gaping yellow maw looming toward you.  You step back in horror.  Is it moving towards you?  Terrified, you try to get out of the room, but you trip and fall.  The air by the floor is less misty, and your mind clears a bit.  You need to get out of this air!  You crawl slowly out of the room, and in the clear air of the hallway, you realize that the face was merely an enormous stone statue.  The mist must have somehow caused you to hallucinate.  No wonder the warrriors were so terrified!  You try to go down the hallway in the other direction, but the passage is completely blocked by fallen rocks.  You can't find any way through, and you finally make your way back across the river to town, always wondering what would have happened if you'd found the treasure.",
+			"shield" => "You come to a door and open it.  You peer into the dark haze and creep inside.  You start to feel slightly woozy.  Suddenly you catch sight of giant glowing red eyes and a gaping yellow maw looming toward you.  You step back in horror.  Is it moving towards you?  Terrified, you try to get out of the room, but you trip and fall.  The air by the floor is less misty, and your mind clears a bit.  You need to get out of this air!  You crawl slowly out of the room, and in the clear air of the hallway, you realize that the face was merely an enormous stone statue.  The mist must have somehow caused you to hallucinate.  No wonder the warrriors were so terrified!  You try to go down the hallway in the other direction, but the passage is completely blocked by fallen rocks.  You can't find any way through, and you finally make your way back across the river to town, always wondering what would have happened if you'd found the treasure.",
 
 			"hall2_mask" => "As you approach the door, you see a complex series of colored stones in red, black, yellow, and blue.  You push on the door but can find no way to open it.  As you poke and prod, you discover that some of the stones can be moved.  Perhaps they form some kind of combination lock!  But what could the lock be?  You must think of how many stones to press and which colors....",
 
@@ -51,7 +53,7 @@ module GameHelper
 	def book_pages
 		@book = {
 				"sketch" =>
-				"	------------------------------------------
+				"				------------------------------------------
 				|                                          |
 				|                -----                     |
 				|               /  _  \\                    |
@@ -75,7 +77,7 @@ module GameHelper
 				 ------------------------------------------",
 
 				 "page1" =>
-			 	"	------------------------------------------
+			 	"				------------------------------------------
 				|                                          |
 				|                                          |
 				|    -oday-- met a ------------- loca-     |

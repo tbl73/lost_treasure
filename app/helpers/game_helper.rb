@@ -83,10 +83,10 @@ module GameHelper
 				|    -oday-- met a ------------- loca-     |
 				|    trib----- confirme------uspicions.    |
 				|    Now I kn---how---------tr--sur-----.  |
-				|              > <                         |
+				|                                          |
+				|                 m---?                    |
 				|                                          |
 				|         R-----R--Y----B-                 |
-				|                                          |
 				 ------------------------------------------",
 
 			}

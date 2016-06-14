@@ -1,1 +1,17 @@
-temple.html.erb
+<p>The monkeys are excited to see your gift.  As they move away to investigate, you step inside and pull out your flashlight.  Your eyes adjust to the dim light, and you start down a corridor.  The walls are covered with a pattern of six repeating colors - three reds, yellow, blue and black.  After a few yards, you find an antechamber with three openings.  Which opening should you choose?  Type left, center or right.</p>
+
+<div>
+	<p><%= @invalid%></p>
+	<p></p>
+</div>
+
+<p><input type="text" id="input" autofocus></input></p>
+
+<script type="text/javascript">
+	$("#input").change(function(){
+		var choice = $(this).val().toLowerCase();
+		var url = "<%= temple_path %>" + "?input=" + choice;
+		window.location = url;
+		})
+
+</script> 

@@ -5,8 +5,11 @@ Rails.application.routes.draw do
   get 'step2' => 'game#step2'
   get 'ending' => 'game#ending'
   get 'river' => 'game#river'
-  get 'temple' => 'temple#river'
-  get 'hall' => 'hall#river'
+  get 'temple' => 'game#temple'
+  get 'hall' => 'game#hall'
+  get 'boat' => 'game#boat'
+  get 'bridge' => 'game#bridge'
+  get 'door' => 'game#door'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

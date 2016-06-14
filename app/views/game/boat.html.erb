@@ -1,0 +1,27 @@
+<p>Atilio still refuses to cross the river, so you say farewell.  You pick up a branch to use as a pole and climb into the boat.  The boat leaks a tiny bit, but your pole works fairly well.  You are making good progress when suddenly you see an angry hippo coming towards you!  You attempt to fend him off with your pole, but 3,300 pounds of aggression is far too much to fight, and your boat is capsized....</p>
+<p></p>
+
+<% case @alternate %>
+<% when 1 %>
+	<p>As your boat tips over, the edge of it hits you in the head.  You dazedly attempt to swim for shore, but the water is too deep and wide, and instead you drown.</p>
+
+<% when 2 %>
+	<p>You are knocked unconscious as the boat is overturned.  Luckily, you get caught in your branch with your head above water.  You drift downstream, eventually washing ashore on a little beach.  You are found by some local people - you have no belongings and no memory of what you were doing in South America.  They nurse you back to health, and eventually you return home, always wondering how you'd ended up in the river.</p>
+
+<% when 3 %>
+	<p>You aren't too far from shore when the boat tips over.  You manage to swim away while the hippo is still distracted by the boat.  You crawl out of the water, relieved to be on shore.  Luckily, your pack is still securely attached to you.  After recovering for a while on the riverbank, you begin to hike towards a mound in the distance.  As you approach, you realize it's a stone temple covered with vines.  It looks like you've found the location from the map!</p>
+	<p></p>
+	<p><p>As you approach the temple, you see an opening in the vines.  Suddenly, you are startled to feel something hit you in the shoulder.  You look up and notice a troop of monkeys throwing grass and small stones at you.  You have to make your way past the monkeys to get into the temple - how can you distract them??</p>
+
+<p>MONKEYS</p></p>
+	
+	<p><input type="text" id="input" autofocus></input></p>
+<% end %>
+
+<script type="text/javascript">
+	$("#input").change(function(){
+		var url = "<%= temple_path %>";
+		window.location = url;
+		})
+
+</script> 

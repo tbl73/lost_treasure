@@ -1,43 +1,25 @@
-<% if choice == "supplies" %>
+<!-- Use a case statement on the params to determine what to display -->
+<% case @choice %>
+<% when "supplies" %>
 
-<div>
-	<p>These supplies are in my pack:</p>
-	<% @supplies.each do |item| %>
-		<p><%= item %></p>
-	<% end %>
-</div>
+	<div>
+		<p>These supplies are in my pack:</p>
+		<% @supplies.each do |item| %>
+			<p><%= item %></p>
+		<% end %>
+	</div>
 
-<% elsif choice == "book" %>
+<% when "book" %>
 	<p>These are the pages in the book:</p>
 	<% @book.each do |key, value| %>
 		<p><%= key %></p>
+		<pre><%= value %></pre>
 	<% end %>
-	<p><input type="text" id="book"></input></p>
-	<div id = "output"></div>
-
-
-<% elsif choice == "list" %>
+	
+<% when "list" %>
 	<p>Type "give" to give away a supply.</p>
 <% end %>
 
 <div>
-	<p>Type back to return to the previous page.</p>
-	<p><input type="text" id="return"></input></p>
+	<p>Press the back button to return to the previous page.</p>
 </div>
-
-<script type="text/javascript">
-	$("#book").change(function(){
-		var choice = $(this).val().toLowerCase();
-		if (choice == "sketch")
-			$("#output").html("<pre><%=@book["sketch"]%></pre>")
-		else if (choice == "page1")
-			$("#output").html("<pre><%=@book["page1"]%></pre>")
-		});
-
-	$("#return").change(function(){
-		var choice = $(this).val().toLowerCase();
-		var url = "<% display %>" + "?input=" + choice
-		window.location.replace(url)
-		});
-
-</script> 

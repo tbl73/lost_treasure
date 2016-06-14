@@ -10,35 +10,18 @@
 <p>
 	<%= @invalid %><%= @collected %>
 </p>
+
 <p></p>
 
 <!-- text box for user input -->
-<p><input type="text" id="menu2"></input></p>
+<p><input type="text" id="input" autofocus></input></p>
 
 <!-- user input is passed to the controller with params -->
 <script type="text/javascript">
-	$("#menu2").change(function(){
+	$("#input").change(function(){
 		var choice = $(this).val().toLowerCase();
-		var url = "<% step2_path %>" + "?input=" + choice
-		window.location.replace(url)
+		var url = "<%= step2_path %>" + "?input=" + choice;
+		window.location = url;
 		})
 
 </script> 
-<!-- 
-def gathering
-	choice = gets.chomp.downcase
-	while choice != "exit"
-		if (choice == "supplies") || (choice == "book") || (choice == "list")
-			options(choice)
-			puts "Enter a fruit or type exit then press enter.".to_yaml
-		elsif @fruit_list.include? choice
-			@supplies.push(choice)
-			puts "You collected #{choice}. Choose another fruit or type exit.".to_yaml
-		else
-			puts "That doesn't grow in this jungle - try something else.".to_yaml
-		end
-		choice = gets.chomp.downcase	
-	end
-	#call the next portion of the story
-	river(@story_hash)
-end

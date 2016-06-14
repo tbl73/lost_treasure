@@ -19,15 +19,17 @@
 		<%= @invalid %>
 	</div>
 <!-- Get user response-->
-<p><input type="text" id="menu1"></input></p>
+<p><input type="text" id="input" autofocus></input></p>
 </div>
 
 
 <script type="text/javascript">
-	$("#menu1").change(function(){
+	
+
+	$("#input").change(function(){
 		var choice = $(this).val().toLowerCase();
-		var url = "<% root_path %>" + "?input=" + choice
-		window.location.replace(url)
+		var url = "<%= root_path %>" + "?input=" + choice;
+		window.location = url;
 		})
 
 </script> 

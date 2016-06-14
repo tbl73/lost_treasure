@@ -1,1 +1,18 @@
-hall.html.erb
+<div>
+	<p><%= @left %>
+		<%= @center %>
+		<%= @right %>
+	</p>
+</div>
+<p><input type="text" id="input" autofocus></input></p>
+
+
+<script type="text/javascript">
+	
+	$("#input").change(function(){
+		var choice = $(this).val().toLowerCase();
+		var url = "<%= hall_path %>" + "?input=" + choice;
+		window.location = url;
+		})
+
+</script> 

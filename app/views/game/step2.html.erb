@@ -1,0 +1,44 @@
+<!--Directions for accessing other information -->
+<p>To look at your supplies at any time, type <strong>"supplies"</strong>. To look at the book pages, type <strong>"book"</strong>. To see a list of actions, type <strong>"list".</strong></p>
+<p></p>
+
+<p> The first step in your treasure hunt is to find a guide.  You ask around in the town, and everyone mentions that Atilio knows the jungle better than anyone.  He agrees to help you in your quest.  When you show him the drawing, he knows of a place where three such rocks are close to a river.  He is willing to bring you to the spot, although he will not cross the river, because he says that land is cursed.  You and Atilio gather supplies - the few readable pages from the journal, water, a flashlight, nuts.  You plan to gather more food along the way, as there is plenty available in the jungle.</p>
+
+<p>You enter the jungle.  As you walk, you marvel at the plants and animals around you.  You see bananas, mangoes, papayas, guava, dragonfruit, and starfruit.  You decide to gather fruit for your journey.  What type of fruit do you want to pick up? Type the fruit name and enter (as many as you want) - type exit when complete.</p>
+<p></p>
+<!-- Display one of two messages for invalid input -->
+<p>
+	<%= @invalid %><%= @collected %>
+</p>
+<p></p>
+
+<!-- text box for user input -->
+<p><input type="text" id="menu2"></input></p>
+
+<!-- user input is passed to the controller with params -->
+<script type="text/javascript">
+	$("#menu2").change(function(){
+		var choice = $(this).val().toLowerCase();
+		var url = "<% step2_path %>" + "?input=" + choice
+		window.location.replace(url)
+		})
+
+</script> 
+<!-- 
+def gathering
+	choice = gets.chomp.downcase
+	while choice != "exit"
+		if (choice == "supplies") || (choice == "book") || (choice == "list")
+			options(choice)
+			puts "Enter a fruit or type exit then press enter.".to_yaml
+		elsif @fruit_list.include? choice
+			@supplies.push(choice)
+			puts "You collected #{choice}. Choose another fruit or type exit.".to_yaml
+		else
+			puts "That doesn't grow in this jungle - try something else.".to_yaml
+		end
+		choice = gets.chomp.downcase	
+	end
+	#call the next portion of the story
+	river(@story_hash)
+end

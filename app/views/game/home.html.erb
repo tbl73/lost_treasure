@@ -1,84 +1,33 @@
+	<div id = "start">
 	<h2>The Lost Treasure of Z</h2>
-	<p>You are in a junk store in South America, when you stumble upon the journal of Sir Reginald Higginbotham, the famous explorer, who disappeared many years ago, searching for the lost treasure of Z.  Sir Reginald was last seen in this very town, and what happened to him has long been a mystery. Leafing through the pages, you find that many of the pages are smeared and difficult to read.  You can make out a few words. </p>
+		<p></p>
+		<!-- display the beginning of the story in the first div -->
+		<p>You are in a junk store in South America, when you stumble upon the journal of Sir Reginald Higginbotham, the famous explorer, who disappeared many years ago, searching for the lost treasure of Z.  Sir Reginald was last seen in this very town, and what happened to him has long been a mystery. No one had found a trace of even his leather hat.  Leafing through the pages, you find that many of them are smeared and difficult to read.  You can make out a few words.</p>
 
-	 <pre>
-		 ------------------------------------------
-		|                                          |
-		|                                          |
-		|    -oday-- met a ------------- loca-     |
-		|    trib----- confirme------uspicions.    |
-		|    Now I kno---------tr--sur---.         |
-		|                                          |
-		|                                          |
-		|    > ^ ^ < ^ > ^ ^ ^ < ^ > ^ ^           |
-		|                                          |
-		 ------------------------------------------
+	  <pre>
+			<%=@book["page1"]%>
+		</pre>
 
-	 </pre>
+		<p>Most interesting of all is a sketch in the back of the book.</p>
 
-	 <pre>
-		 ------------------------------------------
-		|                                          |
-		|    -------olor-----------?               |
-		|           --d                            |
-		|          r--                             |
-		|          -ell--                          |
-		|           re-                            |
-		|           --ack                          |
-		|                                          |
-		-------------------------------------------
+		<pre>
+			<%=@book["sketch"]%>
+		</pre>
 
-	 </pre>
+		<p>Could this be a map to the treasure?  Do you dare try and find it?  Will you avoid the fate of Sir Reginald???  To search for the treasure, type yes and press enter. If you choose not to go on the hunt, type no and press enter.</p>
+	<div>
+		<%= @invalid %>
+	</div>
+<!-- Get user response-->
+<p><input type="text" id="menu1"></input></p>
+</div>
 
-<p>Most interesting is a sketch in the back of the book.</p>
 
-<pre>
-	 ------------------------------------------
-	|                -----                     |
-	|               /  _  \                    |
-	|              /  | |  \                   |
-	|              ---------                   |
-	|      ____             _____              |
-	|     /    \____       /|    \__           |
-	|    /          \_____/ |       \_______   |
-	|      _____            |____              |
-	|     /     \____       /    \__           |
-	|    /           \_____/        \_______   |
-	|                                          |
-	|                        _                 |
-	|                       / \__  ___         |
-	|                      /__/  \/   \        |
-	|                        /____\____\       |
-	|                                          |
-	 ------------------------------------------
-</pre>
-
-<p>Could this be a map to the treasure?  Do you dare try and find it?  And can you avoid the fate of Sir Reginald???</p>
-</p>
-
-<p>To search for the treasure, type 1 and press enter.</p>
-<p>If you choose not to search for the treasure, type 2 and press enter.</p>
-
-<!-- Get user response, then show different text depending on response-->
-
-<p><%= text_field :choice %></p>
-
-<!-- <p><input type="text" id="menu1"></input></p>
 <script type="text/javascript">
-	$("#menu1").keyup(function(){
-		var choice = $(this).val();
-		$("#output").text(choice);
-	})
+	$("#menu1").change(function(){
+		var choice = $(this).val().toLowerCase();
+		var url = "<% root_path %>" + "?input=" + choice
+		window.location.replace(url)
+		})
 
-</script>
-<p id="output"></p> -->
-<!--
-<#% if choice == "1" %>
-	<p>The first step in your treasure hunt is to find a guide.  You ask around in the town, and everyone mentions that Atilio knows the jungle better than anyone.  He agrees to help you in your quest.  When you show him the drawing, he knows of a place where three such rocks are close to a river.  He is willing to bring you to the spot, although he will not cross the river, because he says that land is cursed.  You and Atilio gather supplies - the few readable pages from the journal, water, a flashlight, nuts.  You plan to gather more food along the way, as there is plenty available in the jungle.</p>
-<#% elsif choice == "2" %>
-	<p>You decide to ignore the clues in the journal.  While you live a long and good life, you always wonder what would have happened if you had found the treasure...."</p>
-<#% else %>
-	<p>That wasn't one of the options, please try again.</p>
-	<p><input type="text" id="menu1"></input></p>
-<#% end %>
--->
+</script> 

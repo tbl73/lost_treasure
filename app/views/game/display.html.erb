@@ -1,2 +1,43 @@
-<h1>Game#display</h1>
-<p>Find me in app/views/game/display.html.erb</p>
+<% if choice == "supplies" %>
+
+<div>
+	<p>These supplies are in my pack:</p>
+	<% @supplies.each do |item| %>
+		<p><%= item %></p>
+	<% end %>
+</div>
+
+<% elsif choice == "book" %>
+	<p>These are the pages in the book:</p>
+	<% @book.each do |key, value| %>
+		<p><%= key %></p>
+	<% end %>
+	<p><input type="text" id="book"></input></p>
+	<div id = "output"></div>
+
+
+<% elsif choice == "list" %>
+	<p>Type "give" to give away a supply.</p>
+<% end %>
+
+<div>
+	<p>Type back to return to the previous page.</p>
+	<p><input type="text" id="return"></input></p>
+</div>
+
+<script type="text/javascript">
+	$("#book").change(function(){
+		var choice = $(this).val().toLowerCase();
+		if (choice == "sketch")
+			$("#output").html("<pre><%=@book["sketch"]%></pre>")
+		else if (choice == "page1")
+			$("#output").html("<pre><%=@book["page1"]%></pre>")
+		});
+
+	$("#return").change(function(){
+		var choice = $(this).val().toLowerCase();
+		var url = "<% display %>" + "?input=" + choice
+		window.location.replace(url)
+		});
+
+</script> 

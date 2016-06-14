@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
   root 'game#home'
 
-  get 'game/display'
+  get 'display' => 'game#display'
+  get 'step2' => 'game#step2'
+  get 'ending' => 'game#ending'
+  get 'river' => 'game#river'
+  get 'temple' => 'temple#river'
+  get 'hall' => 'hall#river'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -116,18 +116,20 @@ class GameController < ApplicationController
 		#params from user entry
 		choice = params[:input]
 
-		#the boat story has three random alternatives. first set a variable to a random number between one and three, then specify the path based on the number
+		#the boat story has three random alternatives. first set a variable to a random number between one and three
 		alternate = rand(1..3)
-		if (alternate == 1) || (alternate == 2)
+
+		#if there are no user params and the random number is 1 or 2, go to the endings path, otherwise display story and call monkeys method with params
+		if (!choice) && ((alternate == 1) || (alternate == 2))
 			redirect_to ending_path(input: alternate)
 		else
 			@boat_next = story["boat3"]
 			@temple = story["temple1"]
-			#if a user has entered params, call the monkeys method and pass that param
 			if choice
 				monkeys(choice)
 			end
 		end
+
 	end
 
 	def bridge
